@@ -7,8 +7,8 @@ export const Nav = styled.nav`
     justify-content: center;
 
     position: absolute;
-    width: 1440px;
-    height: 100vh;
+    width: 100%;
+    height: 10vh;
     left: 51px;
     top: 20px;
     `;
@@ -16,7 +16,6 @@ export const Nav = styled.nav`
     export const NavLink = styled(Link)`
     color: #E1B486;
     
-    font-family: Montserrat;
     font-style: light;
     font-weight: normal;
     font-size: 1rem;
@@ -27,6 +26,7 @@ export const Nav = styled.nav`
     text-decoration: none;
     cursor: pointer;
     padding-left: 55px;
+    height: 50px;
 
 
     @media screen and (max-width: 400px) {

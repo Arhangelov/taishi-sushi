@@ -1,0 +1,19 @@
+/* .app {
+  min-height: calc(100vh - 70px);
+} */
+
+html {
+  height: 100%;
+  font-family: Montserrat;
+}
+
+*:focus {
+    outline: none;
+}
+body {
+  margin: 0;
+  padding: 0;
+  /* background: transparent; */
+  /* background: linear-gradient(#141e30, #243b55); */
+  background: linear-gradient(180deg, #070607 0%, #1F1E1C 100%);
+}

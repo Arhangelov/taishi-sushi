@@ -3,12 +3,12 @@ import ImgBg from '../../resources/Background.png'
 
 export const HeroContainer = styled.div`
 position: absolute;
-width: 2026px;
-height: 1019.21px;
-left: 0px;
-top: 0px;
+width: 100%;
+height: 100%;
+// left: 0px;
+// top: 0px;
 
-font-family: Montserrat;
+
 font-style: normal;
 font-weight: normal;
 font-size: 60px;
@@ -18,19 +18,19 @@ letter-spacing: 0.13em;
 color: #E1B486;
 
 background: url(${ImgBg});
-box-shadow: inset 93px 93px 93px 60px rgba(0, 0, 0, 0.7);
+box-shadow: inset 280px 280px 280px 90px rgba(0, 0, 0, 0.7);
 background-position: center;
 background-size: cover;
 `;
 
 export const Japan = styled.p`
 position: absolute;
-width: 56px;
-height: 220px;
-left: 64px;
+width: 5%;
+height: 30%;
+left: 5%;
 top: 349px;
 
-font-family: Montserrat;
+
 font-style: normal;
 font-weight: 300;
 line-height: 56px;

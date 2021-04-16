@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '../Navbar/Navbar';
+
 import { HeroContainer, Japan, Name, To, Welcome } from './HeroElements';
 
 const Hero = () => {
@@ -9,7 +9,6 @@ const Hero = () => {
             <Welcome>WELCOME</Welcome>
             <To>to</To>
             <Name>TAISHI SUSHI</Name>
-            <Navbar />
         </HeroContainer>
     )
 }
