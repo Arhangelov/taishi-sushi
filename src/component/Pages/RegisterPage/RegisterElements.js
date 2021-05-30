@@ -34,7 +34,6 @@ export const Input = styled.input`
   border-bottom: 1px solid white;
   background: transparent;
   margin: 2% 3% 5% 9%; 
-  // margin-left: 9%;
   font-size: 16px;
   caret-color: white;
   height: 30px;

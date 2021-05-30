@@ -1,45 +1,46 @@
 import "./App.css";
 
-import {useEffect} from "react";
+import { useEffect, useState, useContext } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
+import {getUser} from './services/getUser';
+import { Context } from './UserContext/UserContext';
 
 import Navbar from "./component/Navbar/Navbar";
 import HomePage from "./component/Pages/HomePage/HomePage";
-import Form from "./component/Pages/AddPage/Form";
+import AddPage from "./component/Pages/AddPage/AddPage";
 import LoginPage from "./component/Pages/LoginPage/LoginPage";
 import RegisterPage from "./component/Pages/RegisterPage/RegisterPage";
-import { auth } from "./utils/firebase";
-import firebase from 'firebase/app';
+import Menu from "./component/Pages/Menu/Menu";
+import SelectedType from "./component/Pages/Menu/SelectedType/SelectedType";
+import Details from './component/Pages/Details/Details';
+import Footer from './component/Footer/Footer';
 
 function App() {
 
+  const [user, setUser] = useContext(Context);
+
   useEffect(() => {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        console.log("Logged In:");
-        console.log(user);
-      } else {
-        console.log("Logged Out:");
-      }
-    });
-  }, []);
+      getUser().then(currentUser => {
+
+          setUser({_id: currentUser._id, username: currentUser.username})
+    
+      }).catch(err => console.log(err))
+  }, [setUser])
+
 
   return (
     <div name="App">
-      <Navbar />
+        <Navbar />
       <Switch>
-        <Route path="/" component={HomePage} exact />
-        <Route path="/login" component={LoginPage} />
-        <Route path="/register" component={RegisterPage} />
-        <Route path="/add" component={Form} exact />
-        <Route
-          path="/logout"
-          render={(props) => {
-            auth.signOut();
-            return <Redirect to="/" />;
-          }}
-        />
+        <Route path='/' exact component={HomePage} />
+        <Route path='/login' exact component={LoginPage} />
+        <Route path='/menu' exact component={Menu} />
+        <Route path='/menu/:type' exact component={SelectedType}/>
+        <Route path='/menu/details/:id' exact component={Details}/>
+        <Route path='/register' exact component={RegisterPage} />
+        <Route path='/add' exact component={AddPage} />
       </Switch>
+    <Footer />
     </div>
   );
 }

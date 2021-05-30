@@ -9,7 +9,7 @@ import {
     ProductInfo,
     ProductTitle,
     ProductDesc,
-    // ProductPortion,
+    ProductPortion,
     ProductPrice,
     ProductButton
 } from "./ProductsElements";
@@ -23,7 +23,7 @@ const Products = ({ heading, match }) => {
       .then(res => setProducts(res))
       .catch((error) => console.log(error));
   }, []);
-  console.log(products);
+ 
   return (
     <div>
       <ProductsContainer>
@@ -32,11 +32,11 @@ const Products = ({ heading, match }) => {
           {products?.map((product) => {
             return (
               <ProductCard key={product._id}>
-                <ProductImg src={`/${product.imageName}.jpg`} />
+                <ProductImg src={`${product.imageUrl}`} />
                 <ProductInfo>
                   <ProductTitle>{product.title}</ProductTitle>
                   <ProductDesc>{product.description}</ProductDesc>
-                  {/* <ProductPortion>{product.portion}</ProductPortion> */}
+                  <ProductPortion>{product.portion}</ProductPortion>
                   <ProductPrice>{product.price}</ProductPrice>
                   <ProductButton>Add to cart</ProductButton>
                 </ProductInfo>

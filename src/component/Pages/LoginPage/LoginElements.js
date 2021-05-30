@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const FormTitle = styled.h2`
   color: white;
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 10%;
   letter-spacing: 0.3rem;
 `
 
@@ -22,8 +22,8 @@ export const Container = styled.div`
   export const Form = styled.form`
   background: rgba(0,0,0,.5);
   padding-top: 1%;
-  width: 40%;
-  height: 450px;
+  width: 25vw;
+  height: 50vh;
   text-align: center;
   top: 50%;
   box-shadow: 0 15px 15px #1B1B1B;
@@ -32,11 +32,11 @@ export const Container = styled.div`
 `
 
 export const Input = styled.input`
+  display: block;
   border: none;
   border-bottom: 1px solid white;
   background: transparent;
-  margin-top: 10px;
-  margin-bottom: 30px;
+  margin: 2% 3% 5% 9%;
   font-size: 16px;
   caret-color: white;
   height: 30px;
