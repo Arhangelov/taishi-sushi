@@ -2,8 +2,9 @@ import {useContext, useState} from 'react';
 import {Link} from 'react-router-dom';
 import {logout} from '../../services/Logout';
 
-import {NavLink, Nav, NavLogo, Container} from './NavbarElements';
+import {NavLink, Nav, NavUser, NavLogo, Container, IconCart} from './NavbarElements';
 import { ReactComponent as Logo } from '../../resources/Logo.svg';
+import  CartImg  from '../../resources/cart.png';
 import {Context} from '../../UserContext/UserContext' 
 
 const Navbar = () => {
@@ -39,20 +40,23 @@ const Navbar = () => {
                 <NavLink to='/order-now'>ORDER NOW</NavLink>
                 <NavLink to='/menu'>MENU</NavLink>
                 <NavLink to='/contact-us'>CONTACT US</NavLink>
+            </Nav>
 
+            <NavUser>
                 {checkAdmin(user._id)}
                 
               {user.username
                 ?  <>
                     <NavLink to='' onClick={handlerLogout}>LOGOUT</NavLink>
                     <NavLink to='/profile'>{user.username}</NavLink>
+                    <NavLink to='/cart'><i class="fas fa-shopping-cart"/></NavLink>
                     </>
                  : <>
                     <NavLink to='/register'>REGISTER</NavLink>,
                     <NavLink to='/login'>LOGIN</NavLink>
                     </> 
               }
-            </Nav>
+            </NavUser>
         </Container>
 
     )

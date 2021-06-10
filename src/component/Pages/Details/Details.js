@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { getSushiDetails } from '../../../services/sushiService';
+import VanillaTilt from 'vanilla-tilt';
 
 import {
     Container,
@@ -19,8 +20,29 @@ export const Details = ({ match }) => {
             .then(res => {console.log(res); setSushi(res)})
             .catch(error => console.log(error.message));
     },[])
+
+    function Tilt(props) {
+        const { options, ...rest } = props;
+        const tilt = useRef(null);
+      
+        useEffect(() => {
+          VanillaTilt.init(tilt.current, options);
+        }, [options]);
+      
+        return <div ref={tilt} {...rest} /> ;
+    }
+
+    const options = {
+        scale: 1,
+        speed: 1000,
+        max: 15,
+        perspective: 500,
+        transition: true,
+    };
+
     return (
         <>
+        <Tilt options={options} style={{transformStyle:'preserve-3d', transform: 'perspective(900px)'}}>
         <Container>
             <SushiImg src={`${sushi.imageUrl}`} alt="Sushi Image" />
             <SushiTitle>{`${sushi.title}`}</SushiTitle>
@@ -28,6 +50,7 @@ export const Details = ({ match }) => {
             <SushiPortion>{`${sushi.portion}`}</SushiPortion>
             <CartBtn>Add to Cart</CartBtn>
         </Container>
+        </Tilt>
 
         </>
     )

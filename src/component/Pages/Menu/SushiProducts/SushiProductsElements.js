@@ -1,9 +1,18 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 
-export const Cart = styled(Link)`
+// export const TiltEl = styled(Tilt)`
+//     background: rgba(255, 255, 255, 0.1);
+//     overflow: hidden;
+//     border-top: 1px solid rgba(255, 255, 255, 0.1);
+//     border-left: 1px solid rgba(255, 255, 255, 0.1);
+//     backdrop-filter: blur(5px);
+//     box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+// ` 
+
+
+export const Card = styled(Link)`
     text-decoration: none;
-    background: #161616;
     border-radius: 23px;
     width:100%;
     height:100%;
@@ -16,6 +25,7 @@ export const SetImage = styled.img `
     border-radius:20px 20px 20px 0;
     max-width: 60vw;
     max-height: 30vh; 
+    z-index: 10;
 `
 
 export const SetPrice = styled.h4`
@@ -23,8 +33,8 @@ export const SetPrice = styled.h4`
     background-color: #9F3434;
     border-radius: 8px;
     color: whitesmoke;
-    width: 10%;
-    margin-top: -1%;
+    width: 16vh;
+    margin-top: -3%;
     text-align: center;
     z-index: 1;
 `

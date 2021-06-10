@@ -1,6 +1,5 @@
-import {useState, useEffect} from "react";
-import {Link} from 'react-router-dom';
-import {getSushiType} from '../../../services/sushiService';
+
+
 import {
   GridContainer,
   CardType1,
@@ -13,9 +12,9 @@ import {
 } from "./MenuElements";
 
 export const Menu = () => {
-  const [type, setType] = useState([]);
 
-  
+     
+
   return (
     <GridContainer>
       <CardType6>

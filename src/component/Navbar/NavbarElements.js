@@ -2,26 +2,35 @@ import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 
 export const Container = styled.div`
-    display: flex;
-    background: rgba(255, 255, 255, 0.1);
-    overflow: hidden;
-    position: -webkit-sticky;
-    position: sticky;
-    z-index: 1;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    border-left: 1px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(5px);
-`
+  display: flex;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 1;
+  backdrop-filter: blur(5px);
+`;
 
 export const Nav = styled.nav`
-  flex: 3;
-  justify-content: center;
+  flex: 2;
+  justify-content: flex-start;
   position: sticky;
 
   width: 100%;
   /* height: 6vh; */
   left: 51px;
   margin-top: 1.5%;
+`;
+
+export const NavUser = styled.nav`
+  flex: 1;
+  justify-content: center;
+
+  width: 100%;
+  /* height: 6vh; */
+  left: 51px;
+  margin-top: 1.5%;
+  margin-right: 1em;
 `;
 
 export const NavLogo = styled.nav`
@@ -41,10 +50,10 @@ export const NavLink = styled(Link)`
   font-size: 0.8em;
 
   line-height: 2rem;
-  align-items: center;
+  align-items: left;
   text-decoration: none;
   cursor: pointer;
-  padding-left: 55px;
+  padding-left: 2em;
   height: 50px;
 
   @media screen and (max-width: 400px) {
@@ -62,3 +71,8 @@ export const logo = styled(Link)`
   top: 31.73px;
   cursor: pointer;
 `;
+
+export const IconCart = styled.i`
+color: white;
+
+`
