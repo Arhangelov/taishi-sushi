@@ -8,24 +8,30 @@ export const FormTitle = styled.h2`
 `
 
 export const Container = styled.div`
+  position: absolute;
+
+  width: 100vw;
+  height:100vh;
+
   text-align: center;
-  margin-top: 10%;
-  margin-left: 40%;
+ 
 
   font-family: Montserrat;
   font-style: light;
   font-weight: normal;
-  // background: linear-gradient(#141e30, #243b55);
-  border-radius: 20%;
+  background: linear-gradient(#141e30, #243b55);
+  background-position: top left;
+  /* border-radius: 20%; */
   `
   
-  export const Form = styled.form`
+export const Form = styled.form`
   background: rgba(0,0,0,.5);
   padding-top: 1%;
   width: 25vw;
   height: 50vh;
-  text-align: center;
-  top: 50%;
+  margin-left:36%;
+  margin-top:45%;
+
   box-shadow: 0 15px 15px #1B1B1B;
   // background: linear-gradient(#141e30, #243b55);
   background: linear-gradient(360deg, #070607 0%, #1F1E1H 100%);
@@ -67,7 +73,9 @@ export const SubmitBtn = styled.button`
   font-size: 16px;
 
   :hover {
-    background-color: white;
+    background-color: #E1B486;
     color: black;
+    width: 9rem;
+    height: 3rem;
   }
 `

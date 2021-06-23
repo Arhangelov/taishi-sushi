@@ -19,7 +19,7 @@ export const Details = ({ match }) => {
         getSushiDetails(sushiId)
             .then(res => {console.log(res); setSushi(res)})
             .catch(error => console.log(error.message));
-    },[])
+    },[]);
 
     function Tilt(props) {
         const { options, ...rest } = props;
@@ -30,7 +30,12 @@ export const Details = ({ match }) => {
         }, [options]);
       
         return <div ref={tilt} {...rest} /> ;
-    }
+    };
+
+    const addToCart = (sushi) => {
+        console.log(sushi);
+    };
+
 
     const options = {
         scale: 1,
@@ -48,7 +53,7 @@ export const Details = ({ match }) => {
             <SushiTitle>{`${sushi.title}`}</SushiTitle>
             <SushiDesc>{`${sushi.description}`}</SushiDesc>
             <SushiPortion>{`${sushi.portion}`}</SushiPortion>
-            <CartBtn>Add to Cart</CartBtn>
+            <CartBtn onClick = {() => addToCart(sushi)}>Add to Cart</CartBtn>
         </Container>
         </Tilt>
 

@@ -2,10 +2,13 @@ import {useContext, useState} from 'react';
 import {Link} from 'react-router-dom';
 import {logout} from '../../services/Logout';
 
+//Styles
 import {NavLink, Nav, NavUser, NavLogo, Container, IconCart} from './NavbarElements';
 import { ReactComponent as Logo } from '../../resources/Logo.svg';
-import  CartImg  from '../../resources/cart.png';
-import {Context} from '../../UserContext/UserContext' 
+
+//Contexts
+import { Context } from '../../Context/UserContext';
+import { useCart } from '../../Context/CartContext';
 
 const Navbar = () => {
     const [user, setUser] = useContext(Context);
@@ -22,9 +25,9 @@ const Navbar = () => {
          
          if(id == adminId) return  <NavLink to='/add'>+ADD</NavLink>
          return '';
+     };
 
-         
-     }
+     const items = useCart();
     
     return (
         <Container>
@@ -49,10 +52,10 @@ const Navbar = () => {
                 ?  <>
                     <NavLink to='' onClick={handlerLogout}>LOGOUT</NavLink>
                     <NavLink to='/profile'>{user.username}</NavLink>
-                    <NavLink to='/cart'><i class="fas fa-shopping-cart"/></NavLink>
+                    <NavLink to='/cart'><i class="fas fa-shopping-cart"/> ({items.length})</NavLink>
                     </>
                  : <>
-                    <NavLink to='/register'>REGISTER</NavLink>,
+                    <NavLink to='/register'>REGISTER</NavLink>
                     <NavLink to='/login'>LOGIN</NavLink>
                     </> 
               }

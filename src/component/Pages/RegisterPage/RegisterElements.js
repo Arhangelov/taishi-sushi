@@ -65,7 +65,9 @@ export const SubmitBtn = styled.button`
   font-size: 16px;
 
   :hover {
-    background-color: white;
+    background-color: #E1B486;
     color: black;
+    width: 9rem;
+    height: 3rem;
   }
 `

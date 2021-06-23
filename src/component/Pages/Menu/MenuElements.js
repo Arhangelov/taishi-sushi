@@ -25,15 +25,19 @@ export const P = styled.p`
 export const GridContainer = styled.div`
   display: grid;
   gap: 1em;
-  margin-top: 6em;
-  margin-left: 1.7em; 
+  
+  padding-top: 6em;
+  padding-left: 3em; 
+  width: 100vw;
+  height:100vh;
   grid-template-columns: 30% 30% 30%;
-  grid-auto-rows: minmax(230px, auto);
+  grid-auto-rows: minmax(230px, 260px);
   justify-content: start;
   align-items: center;
   text-align: center;
-  width: 100vw;
   cursor: pointer;
+  background: linear-gradient(0deg, rgba(125,56,87,1) 0%, rgba(255,126,58,1) 100%);
+
 `;
 
 export const CardType1 = styled.div`

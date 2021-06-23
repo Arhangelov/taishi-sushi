@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { Redirect } from "react-router";
-import { Context } from "../../../UserContext/UserContext";
+import { Context } from "../../../Context/UserContext";
 import {
   FormTitle,
   Container,

@@ -9,7 +9,7 @@ import {
 } from "./LoginElements";
 
 import { auth } from "../../../utils/firebase";
-import { Context } from "../../../UserContext/UserContext";
+import { Context } from "../../../Context/UserContext";
 
 const Login = ({ history }) => {
   const [email, setEmail] = useState("");

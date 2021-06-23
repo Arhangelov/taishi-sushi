@@ -17,7 +17,6 @@ export const Nav = styled.nav`
   position: sticky;
 
   width: 100%;
-  /* height: 6vh; */
   left: 51px;
   margin-top: 1.5%;
 `;
@@ -27,7 +26,6 @@ export const NavUser = styled.nav`
   justify-content: center;
 
   width: 100%;
-  /* height: 6vh; */
   left: 51px;
   margin-top: 1.5%;
   margin-right: 1em;

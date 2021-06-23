@@ -1,6 +1,6 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import { getSushiType } from '../../../../services/sushiService';
-import {SushiProducts} from '../SushiProducts/SushiProducts';
+import { SushiProducts } from '../SushiProducts/SushiProducts';
 import { Container } from './SelectedTypeEl';
 
 export const SelectedType = ({ match }) =>  {

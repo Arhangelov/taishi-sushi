@@ -3,13 +3,18 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom'; 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { UserContext } from './UserContext/UserContext';
+
+//Contexts
+import { UserContext } from './Context/UserContext';
+import { CartProvider } from './Context/CartContext';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserContext>
-      <App />
+        <CartProvider>
+          <App />
+        </CartProvider>
       </UserContext>
     </BrowserRouter>
   </React.StrictMode>,

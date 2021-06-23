@@ -1,64 +1,64 @@
-import styled from "styled-components";
-import ImgBg from "../../resources/Background.png";
+import styled, { keyframes } from "styled-components";
+
 
 export const HeroContainer = styled.div`
+  top: 0%;
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  justify-content: center;
+  align-items:center;
+  text-align:center;
+  color: #E1B486;
+  
+  background: rgba(0, 0, 0, 0.8);
+  
+  transform: translate(-50% -50%);
+  /* z-index: 0; */
+  `;
 
-  font-style: normal;
-  font-weight: normal;
+export const HeroImg = styled.img`
+    width: 100vw;
+    height:100%;
+    object-fit: cover;
+    
+  `
 
-  color: #e1b486;
+const text = keyframes`
+  0% {
+    color:rgba(0, 0, 0, 0.6);
+    margin-bottom: -16%;
+  }
+  30%{
+    letter-spacing: .rem;
+    margin-bottom: -16%;
+  }
+  80%{
+    letter-spacing: .3rem;
+    margin-bottom: -16%;
+  }
+`
 
-  background: url(${ImgBg});
-
-   box-shadow: inset 280px 280px 280px 90px rgba(0, 0, 0, 0.7);
-   /* mask-image: linear-gradient(to top, rgba(21, 15, 15, 1), transparent); */
-  background-position: center;
-  background-size: cover;
-
-`;
-
-export const Japan = styled.p`
-  position: absolute;
-  width: 5%;
-  height: 30%;
-  left: 5%;
-  top: 10%;
-
-  font-style: normal;
+export const WelcomeIn = styled.p`
   font-size: 3rem;
-  font-weight: 300;
-  line-height: 56px;
-  letter-spacing: 0.13em;
-
-  color: #e1b486;
-`;
-
-export const Welcome = styled.p`
-  font-size: 3.5rem;
   position: absolute;
-  width: 10%;
-  height: 5%;
-  left: 10%;
-  top: 10%;
-`;
+  width: 85%;
+  height: 9vh;
+  /* left: 7%; */
+  /* margin-top: 15%;
+  margin-bottom: -1%; */
+  text-align:center;
+  /* padding-top: 3%; */
+  letter-spacing: 3px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(30px);
+  animation: ${text} 3s 1;
 
-export const To = styled.p`
-  font-size: 40px;
-  position: absolute;
-  width: 69px;
-  height: 42px;
-  left: 11%;
-  top: 23%;
 `;
 
 export const Name = styled.p`
-  font-size: 40px;
-  position: absolute;
-  width: 363px;
+  /* position:absolute; */
+  font-size: 36px;
+  font-style: italic;
+  width: 100%;
   height: 52px;
-  left: 11%;
-  top: 33%;
+
 `;

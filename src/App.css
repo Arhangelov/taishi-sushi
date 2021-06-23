@@ -1,6 +1,6 @@
-/* .app {
+.app {
   min-height: calc(100vh - 70px);
-} */
+}
 
 html {
   font-family: Montserrat;
@@ -9,11 +9,15 @@ html {
 *:focus {
     outline: none;
 }
+
 body {
   margin: 0;
   padding: 0;
   min-width: 100vw;
   min-height: 100vh;
-  background: linear-gradient(180deg, #070607 0%, #1F1E1C 100%);
+  /* background-image: url(./resources/nakaji3.jpg);
   background-repeat: no-repeat;
+  background-position: top;
+  background-size: 100% 52%; */
+  
 }

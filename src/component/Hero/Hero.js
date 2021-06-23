@@ -1,13 +1,14 @@
-import React from 'react'
+import React from 'react';
+import ImgBG from '../../resources/nakaji3.jpg'
 
-import { HeroContainer, Japan, Name, To, Welcome } from './HeroElements';
+import { HeroContainer, HeroImg, Name, WelcomeIn } from './HeroElements';
 
 const Hero = () => {
     return (
         <HeroContainer>
-            <Japan>よ う こ そ</Japan>
-            <Welcome>WELCOME</Welcome>
-            <To>to</To>
+            <HeroImg src={ImgBG} alt='Sushi Bar' />
+            {/* <Japan>よ う こ そ</Japan> */}
+            <WelcomeIn>WELCOME IN</WelcomeIn>
             <Name>TAISHI SUSHI</Name>
         </HeroContainer>
     )

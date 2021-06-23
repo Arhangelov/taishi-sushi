@@ -1,15 +1,5 @@
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
-
-// export const TiltEl = styled(Tilt)`
-//     background: rgba(255, 255, 255, 0.1);
-//     overflow: hidden;
-//     border-top: 1px solid rgba(255, 255, 255, 0.1);
-//     border-left: 1px solid rgba(255, 255, 255, 0.1);
-//     backdrop-filter: blur(5px);
-//     box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
-// ` 
-
+import {Link} from 'react-router-dom'; 
 
 export const Card = styled(Link)`
     text-decoration: none;
@@ -21,7 +11,6 @@ export const Card = styled(Link)`
 `
 
 export const SetImage = styled.img `
-    /* clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%); */
     border-radius:20px 20px 20px 0;
     max-width: 60vw;
     max-height: 30vh; 

@@ -1,21 +1,20 @@
 import styled from 'styled-components';
 
 export const ProductsContainer = styled.div`
-    // position: ;
-    // box-shadow: 10px 5px 5px black;
     margin-top: 100vh;
-    // width: 100vw;
     max-width: 100vw;
     min-height: 100vh;
     padding: 5rem calc((100vw - 1300px) /2);
-    background: #150f0f;
+    background-color: #100C0B;
     color: #fff;
     `
     
 export const ProductWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
+    gap: 3rem;
     justify-content: center;
+
     margin: 0 auto;
     `
 export const ProductCard = styled.div`
@@ -28,15 +27,21 @@ export const ProductImg = styled.img`
     height: 230px;
     min-width: 300px;
     width: 100%;
-    box-shadow: 8px 8px #fdc500;
-  
+    border-radius: 20px;
+    box-shadow: 6px 6px #E1B486;
     object-fit: cover;
+
+    :hover {
+        width: 120%;
+        box-shadow: 9px 9px 9px 9px black;
+    }
 `
 
 export const ProductsHeading = styled.h1`
     font-size: clamp(2rem, 2.5vw, 3rem);
     text-align: center;
     margin-bottom: 5rem;
+    color: #E1B486;
 `
 
 export const ProductTitle = styled.h2`
