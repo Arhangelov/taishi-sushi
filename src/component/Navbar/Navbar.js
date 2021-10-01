@@ -21,7 +21,7 @@ const Navbar = () => {
     };
 
      const checkAdmin = (id) => {
-         const adminId = '6099204089d29d073c9875af';
+         const adminId = '60d0f1dcdbc74d4808424e95';
          
          if(id == adminId) return  <NavLink to='/add'>+ADD</NavLink>
          return '';

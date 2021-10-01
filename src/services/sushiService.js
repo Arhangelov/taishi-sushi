@@ -31,8 +31,8 @@ export const getSushiDetails = ( sushiId ) => {
     }).then(res => res.json())
 }
 
-export const pushToCart = ( sushi, userId ) => {
-    const test = {...sushi, userId}
+export const pushToCart = ( sushi, userId, qty ) => {
+    const test = {...sushi, userId, qty}
     return fetch(urlMenu + 'add-to-cart', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
@@ -45,4 +45,17 @@ export const getUserCart = (userId) => {
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
     }).then(res => res.json())
+}
+
+export const deleteFromCart = (sushiId, userId) => {
+    console.log(sushiId, userId);
+    return fetch(urlMenu + 'delete-from-cart', {
+        method: 'POST',
+        headers: {'Content-type': 'application/json'},
+        body: JSON.stringify({sushiId, userId})
+    }).then(res => res.json())
+}
+
+export const getQty = (title) => {
+    return fetch()
 }

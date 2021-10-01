@@ -1,16 +1,17 @@
-import { useContext, useEffect, useState } from 'react'
-//Styles
-import { Container, CartContainer } from './CartElements';
-//Component
-import CartProducts from './CartProducts/CartProducts';
-//Service
-import { getUserCart } from '../../../services/sushiService';
-//Context
+import { useState, useEffect, useContext } from 'react';
+
+//UserContext
 import { Context } from "../../../Context/UserContext";
+
+//Service
+import { getUserCart, deleteFromCart } from '../../../services/sushiService';
+
+import { TiDeleteOutline } from 'react-icons/ti';
+
 
 const Cart = () => {
     const [user, setUser] = useContext(Context);
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState([]);
 
     //Getting user cart array
     useEffect(() => {
@@ -19,24 +20,37 @@ const Cart = () => {
           .catch((error) => console.log(error.message));
     },[]);
 
-    const title = cart.map((sushi) => sushi.price);
-    console.log(title)
+    //Delete product from cart
+    const deleteHandler = (sushiId, userId) => {
+        
+          deleteFromCart(sushiId, userId);
+    }
+
 
     return (
-      <CartContainer>
-        <Container>
-          {cart.map((sushi) => 
-                <CartProducts 
-                    key={sushi._id}
-                    imageUrl={sushi.imageUrl}
-                    title={sushi.title} 
-                    portion={sushi.portion}
-                    price={sushi.price}
-                    />
-          )}
-        </Container>
-      </CartContainer>
+        <>  
+            <table>
+
+            <thead>
+                <tr>
+                    <th colSpan='4'>Shopping Cart</th>
+                </tr>
+            </thead>
+                {cart.map((sushi) => 
+                    <tbody key={sushi.id}>
+                        <tr>
+                            <td><img src={sushi.imageUrl} alt='Product Image' width='80' height='55'></img></td>
+                            <td>{sushi.title}</td>
+                            <td>{'x' + sushi.qty}</td>
+                            <td>{(sushi.price * sushi.qty).toFixed(2)+'BGN'}</td>
+                            <td><button onClick={deleteHandler(sushi.id, user._id)}><TiDeleteOutline/></button></td>
+                        </tr>
+                        
+                    </tbody>
+                )}               
+            </table>
+        </>
     )
 }
 
-export default Cart
+export default Cart;

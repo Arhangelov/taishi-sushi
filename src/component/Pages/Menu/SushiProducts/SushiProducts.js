@@ -1,4 +1,4 @@
-import { useRef, useEffect, useContext } from 'react';
+import { useRef, useEffect, useContext, useState } from 'react';
 import VanillaTilt from 'vanilla-tilt';
 import { pushToCart } from '../../../../services/sushiService';
 
@@ -13,7 +13,11 @@ import {
     SetPrice,
     SetTitle,
     SetPortion,
-    CartBtn
+    CartBtn,
+    SetQty,
+    QtyDiv,
+    Increment,
+    Decrement
 } from '../SushiProducts/SushiProductsElements';
 
 //Tilt
@@ -29,22 +33,35 @@ function Tilt(props) {
 }
 
 //Component
-export const  SushiProducts = (props) => {
-    const { id, title, imageUrl, portion, price } = props;
+export const  SushiProducts = ( { id, title, imageUrl, portion, price } ) => {
     const [user, setUser] = useContext(Context);
-
+    const [qty, setQty] = useState(0);
+    const sushiData = {id, title, imageUrl, price}
     const dispatch = useDispatchCart();
 
-    const addToCart = (sushi, userId) => {
+    const addToCart = (sushi, userId, currQty) => {
         dispatch({ type: 'ADD', sushi})
-        pushToCart(sushi, userId)
+        pushToCart(sushi, userId, currQty)
             .then(response => console.log(response))
     };
 
+    //Tilt options
     const options = {
-        scale: 1.2,
+        scale: 1.1,
         speed: 1000,
         max: 15
+    };
+
+
+    //Decrement logic
+    const decrement = () => {
+        if(!qty == 0)
+            setQty(qty - 1)
+    }
+
+    //Increment logic
+    const increment = () => {
+        setQty(qty + 1)
     };
 
     return (
@@ -52,11 +69,17 @@ export const  SushiProducts = (props) => {
         <Tilt options={options}>
             <Card to={`/menu/details/${id}`}>
                 <SetImage src={`${imageUrl}`} alt={`${title}`} />
-                <SetPrice>{`${price}`}</SetPrice>
+            </Card>
+                <SetPrice>{`${price.toFixed(2)} BGN`}</SetPrice>
                 <SetTitle> {`${title}`} </SetTitle>
                 <SetPortion>{`${portion}`}</SetPortion>
-            </Card>
-                <CartBtn onClick={() => addToCart(props, user._id)}>Add to Cart</CartBtn>
+                <QtyDiv>
+                    <Decrement onClick={decrement}>-</Decrement>
+                    <SetQty value={qty}></SetQty>
+                    <Increment onClick={increment}>+</Increment>
+                </QtyDiv>
+                <CartBtn onClick={() => addToCart(sushiData, user._id, qty)}>Add to Cart</CartBtn>
+                <div>{qty}</div>
         </Tilt>
         </>
     )
